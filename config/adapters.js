@@ -24,6 +24,10 @@ module.exports.adapters = {
     module: 'sails-disk'
   },
 
+  mongo: {
+    schema: false
+  },
+
   // MySQL is the world's most popular relational database.
   // Learn more: http://en.wikipedia.org/wiki/MySQL
   myLocalMySQLDatabase: {
