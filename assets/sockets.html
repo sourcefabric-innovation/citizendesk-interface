@@ -1,0 +1,14 @@
+<html>
+  <script src="js/socket.io.js"></script>
+  <script src="js/sails.io.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    window.onload = function() {
+      socket.get('/reports?limit=10', function (response) {
+        console.log(response.length);
+      });
+    };
+  </script>
+  <body>
+  </body>
+</html>
