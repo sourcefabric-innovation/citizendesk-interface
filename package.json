@@ -11,21 +11,20 @@
     "optimist": "0.3.4"
   },
   "scripts": {
-    "start": "node app.js",
-    "debug": "node debug app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "app.js",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sourcefabric-innovation/citizendesk-interface.git"
+  },
   "author": "",
   "license": "",
   "bugs": {
     "url": "https://github.com/sourcefabric-innovation/citizendesk-interface/issues"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/sourcefabric-innovation/citizendesk-interface.git"
+  "devDependencies": {
+    "forever": "^0.11.0",
+    "doctest": "^0.6.1"
   }
 }
