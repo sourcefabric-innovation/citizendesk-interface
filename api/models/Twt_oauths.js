@@ -21,8 +21,8 @@ module.exports = {
     toJSON: function() {
       var obj = this.toObject();
       var h = functions.hide;
-      obj.spec.consumer_key = h(obj.spec.consumer_secret);
-      obj.spec.access_token_key = h(obj.spec.access_token_secret);
+      obj.spec.consumer_key = h(obj.spec.consumer_key);
+      obj.spec.access_token_key = h(obj.spec.access_token_key);
       obj.spec.consumer_secret = h(obj.spec.consumer_secret);
       obj.spec.access_token_secret = h(obj.spec.access_token_secret);
       return obj;
