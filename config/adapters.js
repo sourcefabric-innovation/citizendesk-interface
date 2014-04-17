@@ -24,6 +24,11 @@ module.exports.adapters = {
     module: 'sails-disk'
   },
 
+  // Test
+  test: {
+    module: 'sails-disk'
+  },
+
   mongo: {
     module: 'sails-mongo',
     host: 'localhost',

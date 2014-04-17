@@ -11,7 +11,7 @@
     "optimist": "0.3.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "PORT=9999 NODE_ENV=test mocha -R spec -b --recursive"
   },
   "main": "app.js",
   "repository": {
@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "forever": "^0.11.0",
-    "doctest": "^0.6.1"
+    "doctest": "^0.6.1",
+    "mocha": "~1.18.2",
+    "barrels": "0.0.3"
   }
 }

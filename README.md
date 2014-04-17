@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bredikhin/barrels.png?branch=master)](https://travis-ci.org/bredikhin/barrels)
+
 ### citizendesk-interface
 
 This provides the socket and REST interface for the citizendesk
@@ -33,3 +35,9 @@ services are storing new reports.
 Refer to the [citizendesk
 architecture](https://docs.google.com/drawings/d/1lwjMj8gknz2LNCm-yg7Ee1c7Z8hN_3EISxb2n4zw3oM/edit?usp=sharing)
 in order to have an overview.
+
+### Tests
+
+Run tests launching:
+
+    $ npm test
