@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bredikhin/barrels.png?branch=master)](https://travis-ci.org/bredikhin/barrels)
+[![Build Status](https://travis-ci.org/sourcefabric-innovation/citizendesk-interface.png?branch=master)](https://travis-ci.org/sourcefabric-innovation/citizendesk-interface)
 
 ### citizendesk-interface
 
