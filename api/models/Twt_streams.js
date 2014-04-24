@@ -1,3 +1,4 @@
+var request = require('request');
 /**
  * Twt_streams
  *
@@ -14,6 +15,16 @@ module.exports = {
   	nickname: 'string'
   	*/
     
+  },
+  // Lifecycle Callbacks
+  beforeUpdate: function(values, next) {
+    var id = values.id;
+    var action = values.control.switch_on ? 'start' : 'stop';
+    var path = 'http://localhost:9054/feeds/twt/stream/'+id+'/'+action;
+    //console.log(JSON.stringify(values));
+    request.post(path, function(err, httpResponse, body) {
+      if(err) return next(err);
+      next();
+    });
   }
-
 };
