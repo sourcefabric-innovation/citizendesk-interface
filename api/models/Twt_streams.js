@@ -20,9 +20,11 @@ module.exports = {
   beforeUpdate: function(values, next) {
     var id = values.id;
     var action = values.control.switch_on ? 'start' : 'stop';
-    var path = 'http://localhost:9054/feeds/twt/stream/'+id+'/'+action;
+    var path = 'http://localhost:9060/feeds/twt/stream/'+id+'/'+action;
     //console.log(JSON.stringify(values));
-    request.post(path, function(err, httpResponse, body) {
+    request.post(path, function(err, response, body) {
+      console.log('request sent to', path);
+      console.log('response status is', response.statusCode);
       if(err) return next(err);
       next();
     });
