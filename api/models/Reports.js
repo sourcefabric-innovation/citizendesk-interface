@@ -10,6 +10,10 @@ module.exports = {
 
   attributes: {
     id: 'string'
-  }
+  },
 
+  beforeCreate: function(values, next) {
+    values.created = new Date();
+    next();
+  }
 };
