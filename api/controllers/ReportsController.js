@@ -14,6 +14,16 @@
  *
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
+var MongoWatch = require('mongo-watch');
+var watcher = new MongoWatch({format:'pretty'});
+watcher.watch('citizendesk.reports', function(event) {
+  switch (event.operation) {
+  case 'insert':
+    event.data.id = event.data._id;
+    Reports.publishCreate(event.data);
+    break;
+  }
+});
 
 module.exports = {
     
