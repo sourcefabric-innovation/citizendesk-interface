@@ -1,3 +1,4 @@
+var request = require('request');
 /**
  * Twt_streamsController
  *
@@ -15,10 +16,24 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-module.exports = {
-    
-  
+function askCore(req, action, res) {
+  var id = req.param('id');
+  var path = 'http://localhost:9060/feeds/twt/stream/'+id+'/'+action;
+  request.post(path, function(err, response, body) {
+    console.log('request sent to', path);
+    console.log('response status is', response.statusCode);
+    if(err) return res.send(500);
+    res.send();
+  });
+}
 
+module.exports = {
+  start: function(req, res) {
+    askCore(req, 'start', res);
+  },
+  stop: function(req, res) {
+    askCore(req, 'stop', res);
+  },
 
   /**
    * Overrides for the settings in `config/controllers.js`
