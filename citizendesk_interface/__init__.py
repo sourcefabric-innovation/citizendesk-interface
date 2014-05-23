@@ -1,6 +1,6 @@
 from eve import Eve
 
-from settings import settings as default_settings
+from .settings import settings as default_settings
 
 app = Eve(settings=default_settings)
 

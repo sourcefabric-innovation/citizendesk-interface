@@ -1,4 +1,4 @@
-from entities.reports import entity as reports
+from .entities.reports import entity as reports
 
 settings = {
     'MONGO_DBNAME': 'citizendesk',
