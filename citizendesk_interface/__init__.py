@@ -1,10 +1,21 @@
+import logging
+
 from eve import Eve
+from raven.handlers.logging import SentryHandler
 
 from .settings import settings as default_settings
+from .blueprints.proxy import blueprint as proxy_blueprint
 
-app = Eve(settings=default_settings)
+handler = SentryHandler('http://b1901abf077d476ba253bce45dd5bf91:cf99fe3dade94a599e9a79aada3f6266@sentry.sourcefabric.org/8')
+#logger = logging.getLogger('citizendesk')
+#logger.addHandler(handler)
 
-def get_app(customised):
+def get_app(customised={}):
     settings = default_settings.copy()
     settings.update(customised)
-    return Eve(settings=settings)
+    app = Eve(settings=settings)
+    app.register_blueprint(proxy_blueprint, url_prefix='/proxy')
+    app.logger.addHandler(handler)
+    return app
+
+app = get_app()

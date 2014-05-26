@@ -9,5 +9,6 @@ schema = {
 }
 entity = {
     'schema': schema,
-    'resource_methods': ['GET', 'POST'],
+    'resource_methods': ['GET'],
+    'item_methods': ['GET', 'PUT', 'PATCH']
 }

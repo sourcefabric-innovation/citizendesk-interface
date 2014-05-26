@@ -6,8 +6,7 @@ python:
 services:
     - mongodb
 
-install:
-    - pip install eve behave
+install: "pip install -r dependencies.txt"
 
 script:
     - behave
