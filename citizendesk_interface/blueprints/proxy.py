@@ -11,15 +11,18 @@ client = Client('http://b1901abf077d476ba253bce45dd5bf91:cf99fe3dade94a599e9a79a
 core      = 'http://localhost:9060'
 blueprint = Blueprint('proxy', __name__)
 
-def start_stop(id, action):
-    location = core + '/feeds/twt/stream/{0}/{1}'.format(id, action)
+def post_core(url, data={}):
     try:
-        r = requests.post(location)
+        r = requests.post(url, data=data)
         r.raise_for_status()
         return make_response(r.text, r.status_code)
     except requests.exceptions.HTTPError as error:
         client.captureException()
         return error.code
+
+def start_stop(id, action):
+    location = core + '/feeds/twt/stream/{0}/{1}'.format(id, action)
+    return post_core(location)
 
 @blueprint.route('/start-stream/<id>')
 def monitor_start(id):
@@ -28,3 +31,7 @@ def monitor_start(id):
 @blueprint.route('/stop-stream/<id>')
 def monitor_stop(id):
     return start_stop(id, 'stop')
+
+@blueprint.route('/start-twitter-search/', methods=['POST'])
+def start_search():
+    return post_core(core + '/feeds/twt/search/', data=request.form)
