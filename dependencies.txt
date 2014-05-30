@@ -1,4 +1,4 @@
-eve
+git+https://github.com/nicolaiarocci/eve.git@develop
 behave
 requests
 raven
