@@ -1,4 +1,5 @@
 from .entities.reports import entity as reports
+from .entities.twt_searches import entity as twt_searches
 
 settings = {
     'MONGO_DBNAME': 'citizendesk',
@@ -11,6 +12,7 @@ settings = {
         'twt_streams': {},
         'twt_filters': {},
         'twt_oauths': {},
+        'twt-searches': twt_searches,
         'steps': {},
         'settings-bool': {},
         'settings-int': {},
