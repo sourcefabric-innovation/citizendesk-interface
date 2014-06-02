@@ -6,5 +6,6 @@ schema = {
 entity = {
     'schema': schema,
     'resource_methods': ['GET', 'POST'],
-    'item_methods': ['GET']
+    'item_methods': ['GET'],
+    'pagination': False
 }
