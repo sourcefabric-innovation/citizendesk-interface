@@ -1,11 +1,8 @@
 schema = {
-    'channel': {
-        'type': 'list',
-        'allowed': ["citizendesk-frontend", "twitter", "sms"],
-    },
-    'content': {
-        'type': 'string',
-    },
+    'authors': {'type': 'list'},
+    'channels': {'type': 'list',},
+    'original': {'type': 'dict'},
+    'texts': {'type': 'list'},
 }
 entity = {
     'schema': schema,
