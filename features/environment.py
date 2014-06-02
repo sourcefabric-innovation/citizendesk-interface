@@ -13,6 +13,14 @@ class TestBase(TestMinimal):
 
         super(TestBase, self).setUp(settings_file)
 
+    def runTest():
+        '''
+        without this, behavior tests will fail under python 2.7. this
+        is actually a unittest case, but we are using it in order to
+        be run with behave, hence the problem
+        '''
+        pass
+
 def before_all(context):
     context.base = TestBase()
     context.base.setUp()
