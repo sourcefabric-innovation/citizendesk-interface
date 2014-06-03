@@ -35,10 +35,12 @@ def start_stop(id, action):
     return post_core(location)
 
 @blueprint.route('/start-stream/<id>')
+@cross_origin(headers=['Content-Type'])
 def monitor_start(id):
     return start_stop(id, 'start')
 
 @blueprint.route('/stop-stream/<id>')
+@cross_origin(headers=['Content-Type'])
 def monitor_stop(id):
     return start_stop(id, 'stop')
 
