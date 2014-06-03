@@ -1,9 +1,11 @@
 schema = {
     'authors': {'type': 'list'},
-    'channels': {'type': 'list',},
+    'channels': {'type': 'list'},
+    'steps': {'type': 'list'},
     'original': {'type': 'dict'},
     'produced': {'type': 'datetime'},
     'texts': {'type': 'list'},
+    'verified': {'type':'boolean'}
 }
 entity = {
     'schema': schema,
