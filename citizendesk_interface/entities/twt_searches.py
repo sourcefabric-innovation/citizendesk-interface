@@ -1,6 +1,9 @@
 schema = {
     'query': {
         'type': 'dict',
+    },
+    'description': {
+        'type': 'string',
     }
 }
 entity = {
