@@ -1,9 +1,4 @@
-from flask import json
 from eve.tests import test_settings
-
-def assert_success(code):
-    """Assert a successful response"""
-    assert code in (200, 201), 'Expected 20*, got {}'.format(code)
 
 @given('an enabled boolean setting in the database')
 def fun(context):
@@ -41,10 +36,6 @@ def fun(context):
     url = '/settings-bool/{}'.format(id)
     headers = [( 'If-Match', etag )]
     context.response = context.base.put(url, data, headers=headers)
-
-@then('the request is successful')
-def fun(context):
-    assert_success(context.response[1])
 
 @then('we get the id in the request')
 def fun(context):

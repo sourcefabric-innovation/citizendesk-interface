@@ -22,7 +22,6 @@ settings = {
         'settings-bool': {},
         'settings-int': {},
         'settings-string': {},
-        'steps': {},
         'settings-bool': settings_bool,
         'settings-int': settings_int,
         'settings-string': settings_string,
