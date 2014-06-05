@@ -5,6 +5,6 @@ entity = {
         }
     },
     'resource_methods': ['GET', 'POST'],
-    'item_methods': ['GET', 'PUT', 'PATCH'],
+    'item_methods': ['GET', 'PUT', 'PATCH', 'DELETE'],
     'pagination': False
 }
