@@ -6,6 +6,7 @@ from .entities.settings_int import entity as settings_int
 from .entities.settings_string import entity as settings_string
 
 settings = {
+    'SERVER_NAME': 'http://cd2.sourcefabric.net/citizendesk-interface/',
     'MONGO_DBNAME': 'citizendesk',
     'X_DOMAINS': "*",
     'X_HEADERS': "Content-Type,If-Match",
