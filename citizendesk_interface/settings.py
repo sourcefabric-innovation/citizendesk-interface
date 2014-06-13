@@ -12,6 +12,7 @@ settings = {
     'X_HEADERS': "Content-Type,If-Match",
     'XML': False,
     'BANDWIDTH_SAVER': False,
+    'CACHE_CONTROL': 'max-age=0, no-cache',
 
     'DOMAIN': {
         'reports': reports,
