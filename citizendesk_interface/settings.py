@@ -9,7 +9,7 @@ settings = {
     'SERVER_NAME': 'http://cd2.sourcefabric.net/citizendesk-interface',
     'MONGO_DBNAME': 'citizendesk',
     'X_DOMAINS': "*",
-    'X_HEADERS': "Content-Type,If-Match",
+    'X_HEADERS': "Content-Type,If-Match,Authorization",
     'XML': False,
     'BANDWIDTH_SAVER': False,
     'CACHE_CONTROL': 'max-age=0, no-cache',
