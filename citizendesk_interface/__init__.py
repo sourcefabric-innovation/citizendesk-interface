@@ -1,6 +1,7 @@
 import logging
 
 from eve import Eve
+from eve.io.mongo import MongoJSONEncoder
 from raven.handlers.logging import SentryHandler
 import superdesk.users as superdesk_users
 import superdesk.auth as superdesk_auth
@@ -24,7 +25,10 @@ def register_blueprints(app):
 def get_app(customised={}):
     settings = default_settings.copy()
     settings.update(customised)
-    app = Eve(settings=settings)
+    app = Eve(
+        settings=settings,
+        json_encoder=MongoJSONEncoder
+    )
     register_blueprints(app)
     app.logger.addHandler(handler)
     return app
