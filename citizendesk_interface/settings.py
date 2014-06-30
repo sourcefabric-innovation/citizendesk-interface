@@ -13,6 +13,7 @@ settings = {
     'XML': False,
     'BANDWIDTH_SAVER': False,
     'CACHE_CONTROL': 'max-age=0, no-cache',
+    'DATE_FORMAT': '%Y-%m-%dT%H:%M:%S+0000', # Superdesk wants this format
 
     'DOMAIN': {
         'reports': reports,
