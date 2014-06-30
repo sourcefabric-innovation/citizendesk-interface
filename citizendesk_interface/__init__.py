@@ -2,7 +2,9 @@ import logging
 
 from eve import Eve
 from eve.io.mongo import MongoJSONEncoder
+from eve.render import send_response
 from raven.handlers.logging import SentryHandler
+import superdesk
 import superdesk.users as superdesk_users
 import superdesk.auth as superdesk_auth
 from eve_docs import eve_docs
@@ -31,6 +33,16 @@ def get_app(customised={}):
     )
     register_blueprints(app)
     app.logger.addHandler(handler)
+    @app.errorhandler(superdesk.SuperdeskError)
+    def error_handler(error):
+        """Return json error response.
+
+        :param error: an instance of :attr:`superdesk.SuperdeskError` class
+        """
+        return send_response(
+            None,
+            (error.to_dict(), None, None, error.status_code)
+        )
     return app
 
 app = get_app()
