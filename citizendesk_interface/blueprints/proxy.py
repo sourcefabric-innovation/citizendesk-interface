@@ -35,16 +35,16 @@ def start_stop(id, action):
     return post_core(location)
 
 @blueprint.route('/start-stream/<id>')
-@cross_origin(headers=['Content-Type'])
+@cross_origin(headers=['Content-Type,Authorization'])
 def monitor_start(id):
     return start_stop(id, 'start')
 
 @blueprint.route('/stop-stream/<id>')
-@cross_origin(headers=['Content-Type'])
+@cross_origin(headers=['Content-Type,Authorization'])
 def monitor_stop(id):
     return start_stop(id, 'stop')
 
 @blueprint.route('/start-twitter-search/', methods=['POST'])
-@cross_origin(headers=['Content-Type'])
+@cross_origin(headers=['Content-Type,Authorization'])
 def start_search():
     return post_core(core + '/feeds/twt/search/', data=request.get_json())
