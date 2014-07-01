@@ -25,6 +25,7 @@ def before_all(context):
     context.base = TestBase()
     context.base.setUp()
     register_blueprints(context.base.app)
+    context.base.app.debug = True
 
 def after_all(context):
     context.base.tearDown()
