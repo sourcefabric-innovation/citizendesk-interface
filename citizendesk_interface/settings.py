@@ -25,6 +25,7 @@ settings = {
         'settings-bool': {},
         'settings-int': {},
         'settings-string': {},
+        'citizen_aliases': {},
         'settings-bool': settings_bool,
         'settings-int': settings_int,
         'settings-string': settings_string,

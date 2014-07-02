@@ -28,7 +28,8 @@ def post_core(url, data={}):
                     'payload': serialised
                 }
         })
-        return error.code
+        text = 'Error while communicating with citizendesk-core: {}\n'.format(r.status_code)
+        return make_response(text, 500)
 
 def start_stop(id, action):
     location = core + '/feeds/twt/stream/{0}/{1}'.format(id, action)
@@ -48,3 +49,16 @@ def monitor_stop(id):
 @cross_origin(headers=['Content-Type,Authorization'])
 def start_search():
     return post_core(core + '/feeds/twt/search/', data=request.get_json())
+
+@blueprint.route('/fetch-citizen-alias/', methods=['POST'])
+@cross_origin(headers=['Content-Type,Authorization'])
+def fun():
+    data = request.get_json()
+    auth = data['authority']
+    name = data['name']
+    # more authorities could be eventually added
+    map = {
+        'twitter': '/feeds/twt/citizen/alias/name/{0}/request/',
+    }
+    url = core + map[auth].format(name)
+    return post_core(url)

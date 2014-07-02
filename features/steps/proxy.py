@@ -1,6 +1,8 @@
-from unittest.mock import Mock
+from unittest.mock import Mock, ANY
 
 import citizendesk_interface.blueprints.proxy as proxy
+
+core = 'http://localhost:9060'
 
 response = Mock(
     raise_for_status=lambda :None,
@@ -18,3 +20,18 @@ def fun(context):
 @then('the request is forwarded to the core')
 def fun(context):
     assert proxy.requests.post.called, 'the mocked post was not called'
+
+@given('a request to fetch a twitter alias')
+def fun(context):
+    context.base.post('/proxy/fetch-citizen-alias/', {
+        'name': 'Lukas',
+        'authority': 'twitter'
+    })
+
+@then('the fetch request is forwarded to the core')
+def fun(context):
+    proxy.requests.post.assert_called_with(
+        core + '/feeds/twt/citizen/alias/name/Lukas/request/',
+        data='{}',
+        headers=ANY
+    )
