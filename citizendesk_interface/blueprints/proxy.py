@@ -62,3 +62,8 @@ def fun():
     }
     url = core + map[auth].format(name)
     return post_core(url)
+
+@blueprint.route('/mobile-reply/', methods=['POST'])
+@cross_origin(headers=['Content-Type,Authorization'])
+def reply():
+    return post_core(core + '/feeds/sms/reply/', data=request.get_json())
