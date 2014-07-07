@@ -1,5 +1,5 @@
-git+git://github.com/superdesk/eve@develop#egg=Eve==0.4
-git+https://github.com/superdesk/superdesk-server.git
+git+git://github.com/nicolaiarocci/eve.git@v0.4#egg=Eve==0.4
+git+git://github.com/superdesk/superdesk-server.git@v0.1.2#egg=Superdesk-Server==0.1.2
 behave
 requests
 raven
