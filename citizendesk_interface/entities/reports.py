@@ -8,7 +8,10 @@ schema = {
         'required': True
     },
     'texts': {'type': 'list'},
-    'verified': {'type':'boolean'}
+    'verified': {'type':'boolean'},
+    'feed_type': {'type':'string'},
+    'session': {'type':'string'},
+    'local': {'type':'boolean'}
 }
 entity = {
     'schema': schema,
