@@ -14,6 +14,8 @@ settings = {
     'BANDWIDTH_SAVER': False,
     'CACHE_CONTROL': 'max-age=0, no-cache',
     'DATE_FORMAT': '%Y-%m-%dT%H:%M:%S+0000', # Superdesk wants this format
+    'PAGINATION_DEFAULT': 100,
+    'PAGINATION_LIMIT': 200,
 
     'DOMAIN': {
         'reports': reports,
