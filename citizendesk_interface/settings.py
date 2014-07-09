@@ -13,6 +13,7 @@ settings = {
     'XML': False,
     'BANDWIDTH_SAVER': False,
     'CACHE_CONTROL': 'max-age=0, no-cache',
+    'CACHE_EXPIRES': 0,
     'DATE_FORMAT': '%Y-%m-%dT%H:%M:%S+0000', # Superdesk wants this format
     'PAGINATION_DEFAULT': 100,
     'PAGINATION_LIMIT': 200,
