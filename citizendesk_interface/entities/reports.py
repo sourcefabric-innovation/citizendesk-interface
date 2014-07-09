@@ -11,7 +11,17 @@ schema = {
     'verified': {'type':'boolean'},
     'feed_type': {'type':'string'},
     'session': {'type':'string'},
-    'local': {'type':'boolean'}
+    'local': {'type':'boolean'},
+    # according to Martin, this is where the user id is specified, but
+    # just when `local` is true (citizendesk users)
+    'user_id': {
+        'type':'objectid',
+        'data_relation': {
+            'resource': 'users',
+            'field': '_id',
+            'embeddable': True
+        }
+    }
 }
 entity = {
     'schema': schema,
