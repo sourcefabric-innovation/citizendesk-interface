@@ -2,7 +2,17 @@ schema = {
     'authors': {'type': 'list'},
     'channels': {'type': 'list'},
     'steps': {'type': 'list'},
-    'assignments': {'type': 'list'},
+    'assignments': {
+        'type': 'list',
+        'schema': {
+            'type': 'dict',
+            'schema': {
+                'user_id': {
+                    'type': 'objectid'
+                }
+            }
+        }
+    },
     'original': {'type': 'dict'},
     'produced': {
         'type': 'datetime',
