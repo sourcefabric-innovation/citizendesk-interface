@@ -2,6 +2,7 @@ schema = {
     'authors': {'type': 'list'},
     'channels': {'type': 'list'},
     'steps': {'type': 'list'},
+    'assignments': {'type': 'list'},
     'original': {'type': 'dict'},
     'produced': {
         'type': 'datetime',
