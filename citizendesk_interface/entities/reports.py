@@ -33,6 +33,16 @@ schema = {
             'embeddable': True
         }
     },
+    # `on_behalf_id` is not embeddable because it may be missing. in
+    # this case, currently (July 2014), Eve throws an error when
+    # trying to embed it
+    'on_behalf_id': {
+        'type':'objectid',
+        'data_relation': {
+            'resource': 'users',
+            'field': '_id',
+        }
+    },
     'coverages': {'type': 'dict'},
 }
 entity = {
