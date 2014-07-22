@@ -32,7 +32,8 @@ schema = {
             'field': '_id',
             'embeddable': True
         }
-    }
+    },
+    'coverages': {'type': 'dict'},
 }
 entity = {
     'schema': schema,

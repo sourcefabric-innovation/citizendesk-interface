@@ -4,6 +4,7 @@ from .entities.steps import entity as steps
 from .entities.settings_bool import entity as settings_bool
 from .entities.settings_int import entity as settings_int
 from .entities.settings_string import entity as settings_string
+from .entities.coverages import entity as coverages
 
 settings = {
     'SERVER_NAME': 'http://cd2.sourcefabric.net/citizendesk-interface',
@@ -32,5 +33,6 @@ settings = {
         'settings-bool': settings_bool,
         'settings-int': settings_int,
         'settings-string': settings_string,
+        'coverages': coverages,
     }
 }
