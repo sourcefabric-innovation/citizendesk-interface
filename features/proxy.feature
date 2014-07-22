@@ -11,3 +11,11 @@ Scenario: start a twitter search
 Scenario: twitter alias request
     Given a request to fetch a twitter alias
      then the fetch request is forwarded to the core
+
+Scenario: publish report
+    Given a request to publish a report
+     then the publish request is forwarded to the core
+
+Scenario: unpublish report
+    Given a request to unpublish a report
+     then the unpublish request is forwarded to the core

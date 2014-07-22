@@ -67,3 +67,23 @@ def fun():
 @cross_origin(headers=['Content-Type,Authorization'])
 def reply():
     return post_core(core + '/feeds/sms/reply/', data=request.get_json())
+
+@blueprint.route('/publish/', methods=['POST'])
+@cross_origin(headers=['Content-Type,Authorization'])
+def publish():
+    data = request.get_json();
+    location = core + '/feeds/any/report/id/{0}/publish/{1}/'.format(
+        data['report'],
+        data['coverage']
+    )
+    return post_core(location)
+
+@blueprint.route('/unpublish/', methods=['POST'])
+@cross_origin(headers=['Content-Type,Authorization'])
+def unpublish():
+    data = request.get_json();
+    location = core + '/feeds/any/report/id/{0}/unpublish/{1}/'.format(
+        data['report'],
+        data['coverage']
+    )
+    return post_core(location)
