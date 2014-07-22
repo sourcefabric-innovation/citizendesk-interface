@@ -15,10 +15,16 @@ users = Init('users', [{
 }, {
         'username': 'Darko',
         'password': 'no',
+}, {
+        'username': 'Erik',
+        'password': 'no',
+}, {
+        'username': 'Aderito',
+        'password': 'no',
 }])
 coverages = Init('coverages', [{
         'title': 'default coverage'
-}]
+}])
 
 client = MongoClient()
 database = client['citizendesk']
