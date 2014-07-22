@@ -1,12 +1,9 @@
+from collections import namedtuple
+
 from pymongo import MongoClient
 
-client = MongoClient()
-database = client['citizendesk']
-collection = database['users']
-
-collection.drop()
-
-users = [{
+Init = namedtuple('Init', ['collection', 'data'])
+users = Init('users', [{
         'username': 'Doug',
         'password': 'no',
 }, {
@@ -18,6 +15,15 @@ users = [{
 }, {
         'username': 'Darko',
         'password': 'no',
+}])
+coverages = Init('coverages', [{
+        'title': 'default coverage'
 }]
 
-for user in users: collection.insert(user)
+client = MongoClient()
+database = client['citizendesk']
+for init in users, coverages:
+    collection = database[init.collection]
+    collection.drop()
+    for document in init.data:
+        collection.insert(document)
