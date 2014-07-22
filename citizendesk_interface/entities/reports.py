@@ -1,3 +1,6 @@
+# references are not embeddable when they may be missing. if their
+# value is null, currently (July 2014), Eve throws an error when
+# trying to embed it
 schema = {
     'authors': {'type': 'list'},
     'channels': {'type': 'list'},
@@ -24,18 +27,12 @@ schema = {
     'session': {'type':'string'},
     'local': {'type':'boolean'},
     # according to Martin, this is where the user id is specified, but
-    # just when `local` is true (citizendesk users)
+    # just when `local` is true (citizendesk users). Not embeddable,
+    # see comment on the top of the file
     'user_id': {
         'type':'objectid',
-        'data_relation': {
-            'resource': 'users',
-            'field': '_id',
-            'embeddable': True
-        }
     },
-    # `on_behalf_id` is not embeddable because it may be missing. in
-    # this case, currently (July 2014), Eve throws an error when
-    # trying to embed it
+    # `on_behalf_id` is not embeddable, see comment on the top of the file
     'on_behalf_id': {
         'type':'objectid',
         'data_relation': {
