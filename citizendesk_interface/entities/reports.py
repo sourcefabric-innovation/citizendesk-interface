@@ -21,8 +21,13 @@ schema = {
         'type': 'datetime',
         'required': True
     },
+    'created': {
+        'type': 'datetime',
+        'required': True
+    },
     'texts': {'type': 'list'},
     'verified': {'type':'boolean'},
+    'summary': {'type':'boolean'},
     'feed_type': {'type':'string'},
     'session': {'type':'string'},
     'local': {'type':'boolean'},
