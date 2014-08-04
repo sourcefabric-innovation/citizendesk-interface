@@ -19,7 +19,7 @@ init_core_config = Init("core_config", [{
     "sms_session_duration": 24,
     # whether to send an automatic reply or not
     "sms_reply_send": True,
-    # content of the automatir reply
+    # content of the automatic reply
     "sms_reply_message": "Thank you for your report. Let us know more about it by telling us: 1) Your name 2) Your location. A reporter may contact you directly."
 }])
 
