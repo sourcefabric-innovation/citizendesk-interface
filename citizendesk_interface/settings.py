@@ -10,35 +10,39 @@ from .entities.settings_string import entity as settings_string
 from .entities.coverages import entity as coverages
 from .entities.core_config import entity as core_config
 
-settings = { 'SERVER_NAME':
-             'http://cd2.sourcefabric.net/citizendesk-interface',
-             'MONGO_DBNAME': 'citizendesk', 'X_DOMAINS': "*",
-             'X_HEADERS': "Content-Type,If-Match,Authorization",
-             'XML': False, 'BANDWIDTH_SAVER': False, 'CACHE_CONTROL':
-             'max-age=0, no-cache', 'CACHE_EXPIRES': 0, 'DATE_FORMAT':
-             '%Y-%m-%dT%H:%M:%S+0000', # Superdesk wants this format
-             'PAGINATION_DEFAULT': 100, 'PAGINATION_LIMIT': 200,
+settings = {
+    'SERVER_NAME': 'http://cd2.sourcefabric.net/citizendesk-interface',
+    'MONGO_DBNAME': 'citizendesk',
+    'X_DOMAINS': "*",
+    'X_HEADERS': "Content-Type,If-Match,Authorization",
+    'XML': False,
+    'BANDWIDTH_SAVER': False,
+    'CACHE_CONTROL': 'max-age=0, no-cache',
+    'CACHE_EXPIRES': 0,
+    'DATE_FORMAT': '%Y-%m-%dT%H:%M:%S+0000',
+    # Superdesk wants this format
+    'PAGINATION_DEFAULT': 100,
+    'PAGINATION_LIMIT': 200,
              
-             # even if dash separated is more common in URLs, i am
-             # using underscore to separate words here. it is in the
-             # Python style and it will work nicely with `eve-api` on
-             # the clien side. in Javascript a dash separated object
-             # property has to be accessed like in
-             # `obj['dash-separated']`, while an underscore separated
-             # one will be accessible simply with
-             # `obj.underscore_separated`
-             'DOMAIN': {
-                 'reports': reports,
-                 'twt_filters': twt_filters,
-                 'twt_oauths': twt_oauths,
-                 'twt-searches': twt_searches,
-                 'twt_streams': twt_streams,
-                 'steps': steps,
-                 'citizen_aliases': {},
-                 'settings-bool': settings_bool,
-                 'settings-int': settings_int,
-                 'settings-string': settings_string,
-                 'coverages': coverages,
-                 'core_config': core_config,
-             }
+    # even if dash separated is more common in URLs, i am using
+    # underscore to separate words here. it is in the Python style and
+    # it will work nicely with `eve-api` on the clien side. in
+    # Javascript a dash separated object property has to be accessed
+    # like in `obj['dash-separated']`, while an underscore separated
+    # one will be accessible simply with `obj.underscore_separated`
+    
+    'DOMAIN': {
+        'reports': reports,
+        'twt_filters': twt_filters,
+        'twt_oauths': twt_oauths,
+        'twt-searches': twt_searches,
+        'twt_streams': twt_streams,
+        'steps': steps,
+        'citizen_aliases': {},
+        'settings-bool': settings_bool,
+        'settings-int': settings_int,
+        'settings-string': settings_string,
+        'coverages': coverages,
+        'core_config': core_config,
+    }
 }
