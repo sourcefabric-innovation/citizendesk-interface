@@ -51,5 +51,6 @@ schema = {
 entity = {
     'schema': schema,
     'resource_methods': ['GET', 'POST'],
-    'item_methods': ['GET', 'PUT', 'PATCH']
+    # DELETE introduced in order to delete session summaries
+    'item_methods': ['GET', 'PUT', 'PATCH', 'DELETE']
 }
