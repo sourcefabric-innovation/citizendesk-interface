@@ -28,6 +28,7 @@ schema = {
     'texts': {'type': 'list'},
     'verified': {'type':'boolean'},
     'summary': {'type':'boolean'},
+    'proto': {'type':'boolean'},
     'feed_type': {'type':'string'},
     'session': {'type':'string'},
     'local': {'type':'boolean'},
