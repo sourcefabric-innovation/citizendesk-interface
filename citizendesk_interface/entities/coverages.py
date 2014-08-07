@@ -9,6 +9,6 @@ entity = {
         'active': {'type': 'boolean'},
     },
     'resource_methods': ['GET', 'POST'],
-    'item_methods': ['GET', 'PUT', 'DELETE'],
+    'item_methods': ['GET', 'PUT', 'DELETE', 'PATCH'],
     'pagination': False,
 }
