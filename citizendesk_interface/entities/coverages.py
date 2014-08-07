@@ -6,7 +6,7 @@ entity = {
             'required': True
         },
         'description': {'type': 'string'},
-        'active': {'type': 'bool'},
+        'active': {'type': 'boolean'},
     },
     'resource_methods': ['GET', 'POST'],
     'item_methods': ['GET', 'PUT', 'DELETE'],
