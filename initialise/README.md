@@ -10,3 +10,8 @@ collection at a time.
 The other scripts will initialise one collection at a time.
 
 Run with `python initialise/init_all.py` or `python initialise/users.py`
+
+#### Testing
+
+Please test the initialisation script on a local Mongo instance before
+pushing changes to master
