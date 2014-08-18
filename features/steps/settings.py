@@ -29,7 +29,6 @@ def fun(context):
     id = str(context.response[0]['_id'])
     etag = context.response[0]['_etag']
     data = {
-        '_id': id,
         'key': 'autoreply',
         'value': True
     }

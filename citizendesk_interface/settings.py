@@ -9,6 +9,8 @@ from .entities.settings_int import entity as settings_int
 from .entities.settings_string import entity as settings_string
 from .entities.coverages import entity as coverages
 from .entities.core_config import entity as core_config
+from .entities.citizen_lists import entity as citizen_lists
+from .entities.citizen_aliases import entity as citizen_aliases
 
 settings = {
     'SERVER_NAME': 'http://cd2.sourcefabric.net/citizendesk-interface',
@@ -38,11 +40,12 @@ settings = {
         'twt-searches': twt_searches,
         'twt_streams': twt_streams,
         'steps': steps,
-        'citizen_aliases': {},
         'settings-bool': settings_bool,
         'settings-int': settings_int,
         'settings-string': settings_string,
         'coverages': coverages,
         'core_config': core_config,
+        'citizen_lists': citizen_lists,
+        'citizen_aliases': citizen_aliases,
     }
 }

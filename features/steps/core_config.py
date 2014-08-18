@@ -9,7 +9,7 @@ def fun(context):
 def fun(context):
     data = {
         'type': 'invented',
-        'spec': {}
+        'set': {}
     }
     url = '/core_config/'
     context.response = context.base.post(url, data)
@@ -34,12 +34,11 @@ def fun(context):
 @when('we update the sms doc')
 def fun(context):
     doc = context.response[0]['_items'][0]
-    id = str(doc['_id'])
+    id = doc['_id']
     etag = doc['_etag']
     data = {
-        '_id': id,
         'type': 'sms',
-        'spec': {}
+        'set': {}
     }
     url = '/core_config/{}'.format(id)
     headers = [( 'If-Match', etag )]

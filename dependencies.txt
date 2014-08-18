@@ -1,4 +1,4 @@
-git+git://github.com/nicolaiarocci/eve.git@v0.4#egg=Eve==0.4
+https://github.com/nicolaiarocci/eve/archive/343a99e01b702003aa09b67dd00261a5af01bbf2.zip
 git+git://github.com/superdesk/superdesk-server.git@v0.1.2#egg=Superdesk-Server==0.1.2
 behave
 requests
