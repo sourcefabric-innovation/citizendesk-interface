@@ -46,7 +46,41 @@ schema = {
             'field': '_id',
         }
     },
-    'coverages': {'type': 'dict'},
+    'coverages': {
+        'type': 'dict',
+        'schema': {
+            'outgested': {
+                'type': 'list',
+                'schema': {
+                    'type': 'objectid',
+                    'data_relation': {
+                        'resource': 'coverages',
+                        'field': '_id'
+                    }
+                }
+            },
+            'targeting': {
+                'type': 'list',
+                'schema': {
+                    'type': 'objectid',
+                    'data_relation': {
+                        'resource': 'coverages',
+                        'field': '_id'
+                    }
+                }
+            },
+            'published': {
+                'type': 'list',
+                'schema': {
+                    'type': 'objectid',
+                    'data_relation': {
+                        'resource': 'coverages',
+                        'field': '_id'
+                    }
+                }
+            }
+        }
+    },
 }
 entity = {
     'schema': schema,
