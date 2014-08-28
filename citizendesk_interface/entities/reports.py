@@ -11,7 +11,12 @@ schema = {
             'type': 'dict',
             'schema': {
                 'user_id': {
-                    'type': 'objectid'
+                    'type': 'objectid',
+                    'data_relation': {
+                        'resource': 'users',
+                        'field': '_id',
+                        'embeddable': True
+                    }
                 }
             }
         }
@@ -45,6 +50,24 @@ schema = {
             'resource': 'users',
             'field': '_id',
         }
+    },
+    'status': {
+        'type':'string',
+        # just direct statuses and the null status are allowed
+        'allowed': [
+            'dismissed',
+            'debunked',
+            'verified',
+            ''
+        ],
+        'data_relation': {
+            'resource': 'report_statuses',
+            'field': 'key',
+            # careful with embedding, may be null
+        }
+    },
+    'status_updated': {
+        'type': 'datetime'
     },
     'coverages': {
         'type': 'dict',
