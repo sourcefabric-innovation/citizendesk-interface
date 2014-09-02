@@ -1,3 +1,13 @@
+'''
+Caveat: albeit being initialisation code, the values of the `key`
+properties here are connected with the core, interface and frontend
+code, and wrong values may lead to runtime errors. Modify with extreme
+care and be sure to update the corresponding values in the code. Yeah
+this is awful but i do not seem to have any choice at the
+moment. Maybe one day the core will have internationalisation, so that
+this collection and other workarounds will become superfluous
+'''
+
 from main import Init, init_collection
 
 init_report_statuses = Init('report_statuses', [{
