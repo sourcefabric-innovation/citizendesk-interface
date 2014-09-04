@@ -13,7 +13,7 @@ from main import Init, init_collection
 init_report_statuses = Init('report_statuses', [{
     'key': 'new',
     'direct': False,
-    'description': 'This report is not verified yet'
+    'description': 'This report has been received'
 }, {
     'key': 'assigned',
     'direct': False,
@@ -21,11 +21,11 @@ init_report_statuses = Init('report_statuses', [{
 }, {
     'key': 'dismissed',
     'direct': True,
-    'description': 'This report will not undergo verification'
+    'description': 'This report has been dismissed as irrelevant'
 }, {
     'key': 'debunked',
     'direct': True,
-    'description': 'This report has been proven to be false!'
+    'description': 'This report has been found false'
 }, {
     'key': 'verified',
     'direct': True,
