@@ -3,4 +3,4 @@ behave
 requests
 raven
 flask-cors
-blinker
+gunicorn

@@ -2,3 +2,4 @@ https://github.com/nicolaiarocci/eve/archive/45eb89aa1397fefd13ccda6a236aa43b092
 Flask-Mail==0.9.0
 celery[redis]==3.1.13
 bcrypt==1.0.2
+blinker
