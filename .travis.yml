@@ -6,7 +6,7 @@ python:
 services:
     - mongodb
 
-install: "pip install -r dependencies.txt"
+install: "pip install -r dependencies.txt -r superdesk-dependencies.txt"
 
 script:
     - behave
