@@ -1,6 +1,6 @@
 from main import Init, init_collection
 
-init_steps = Init('coverages', [{
+init_steps = Init('steps', [{
     'description': 'I have contacted this citizen reporter',
     'mandatory': False
 }, {
@@ -9,7 +9,6 @@ init_steps = Init('coverages', [{
 }, {
     'description': 'I have determined the location of the report',
     'mandatory': False
-}, {
 }])
 
 if __name__ == "__main__": init_collection(init_steps)
