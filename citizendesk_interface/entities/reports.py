@@ -1,3 +1,5 @@
+from uuid import uuid1
+
 # references are not embeddable when they may be missing. if their
 # value is null, currently (July 2014), Eve throws an error when
 # trying to embed it
@@ -108,3 +110,10 @@ entity = {
     # DELETE introduced in order to delete session summaries
     'item_methods': ['GET', 'PUT', 'PATCH', 'DELETE']
 }
+
+def on_insert_reports(items):
+    for item in items:
+        item['report_id'] = str(uuid1())
+
+def init(app):
+    app.on_insert_reports += on_insert_reports

@@ -11,6 +11,7 @@ from eve_docs import eve_docs
 from flask.ext.bootstrap import Bootstrap
 
 from .entities.twt_oauths import init as citizendesk_oauths_init_app
+from .entities.reports import init as citizendesk_reports_init_app
 from .settings import settings as default_settings
 from .blueprints.proxy import blueprint as proxy_blueprint
 
@@ -23,6 +24,7 @@ def register_blueprints(app):
     superdesk_users.init_app(app)
     superdesk_auth.init_app(app)
     citizendesk_oauths_init_app(app)
+    citizendesk_reports_init_app(app)
     Bootstrap(app) # required by eve docs
     app.register_blueprint(eve_docs, url_prefix='/docs')
 

@@ -1,6 +1,12 @@
 Feature: handling reports
 
+  Scenario: create report
+      when we insert a report
+      then the request is successful
+       and the report gets a report id
+
   Scenario: get reports
+     given no reports
       when we ask reports
       then we get an empty list
 
