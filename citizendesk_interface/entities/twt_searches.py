@@ -4,6 +4,14 @@ schema = {
     },
     'description': {
         'type': 'string',
+    },
+    'creator': {
+        'type': 'objectid',
+        'data_relation': {
+            'resource': 'users',
+            'field': '_id',
+            'embeddable': True
+        }
     }
 }
 entity = {
