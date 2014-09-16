@@ -33,7 +33,10 @@ schema = {
     'summary': {'type':'boolean'},
     'proto': {'type':'boolean'},
     'automatic': {'type':'boolean'},
-    'feed_type': {'type':'string'},
+    'feed_type': {
+        'type':'string',
+        'allowed': ['tweet', 'sms', 'plain', 'link']
+    },
     'session': {'type':'string'},
     'local': {'type':'boolean'},
     # according to Martin, this is where the user id is specified, but
