@@ -1,4 +1,5 @@
 from unittest.mock import Mock, ANY
+import json
 
 import citizendesk_interface.blueprints.proxy as proxy
 
@@ -65,3 +66,27 @@ def fun(context):
         data='{}',
         headers=ANY
     )
+
+@given('a request to ingest from a location')
+def fun(context):
+    context.base.post('/proxy/ingest_from_location/', {
+        'location': 'http://whatever.com',
+        'user_id': 'abcdef'
+    })
+
+@then('the ingestion request is forwarded to the core')
+def fun(context):
+    proxy.requests.post.assert_called_with(
+        core + '/ingest/url/feed/',
+        data=ANY,
+        headers=ANY
+    )
+    keyword_args = proxy.requests.post.call_args[1]
+    data = json.loads(keyword_args['data'])
+    context.base.assertIsNotNone(data)
+    expected = {
+        'url_link': 'http://whatever.com',
+        'feed_name': 'frontend',
+        'request_id': 'abcdef'
+    }
+    context.base.assertEqual(data, expected)

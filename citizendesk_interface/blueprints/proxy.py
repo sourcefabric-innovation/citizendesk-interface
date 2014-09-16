@@ -87,3 +87,14 @@ def unpublish():
         data['coverage']
     )
     return post_core(location)
+
+@blueprint.route('/ingest_from_location/', methods=['POST'])
+@cross_origin(headers=['Content-Type,Authorization'])
+def ingest_from_location():
+    data = request.get_json();
+    return post_core(core + '/ingest/url/feed/',
+                     data = {
+                         'url_link': data['location'],
+                         'feed_name': 'frontend',
+                         'request_id': data['user_id']
+                     })

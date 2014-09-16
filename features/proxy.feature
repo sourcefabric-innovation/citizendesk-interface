@@ -19,3 +19,7 @@ Scenario: publish report
 Scenario: unpublish report
     Given a request to unpublish a report
      then the unpublish request is forwarded to the core
+
+Scenario: ingest from location
+    given a request to ingest from a location
+     then the ingestion request is forwarded to the core
