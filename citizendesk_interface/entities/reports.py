@@ -35,7 +35,7 @@ schema = {
     'automatic': {'type':'boolean'},
     'feed_type': {
         'type':'string',
-        'allowed': ['tweet', 'sms', 'plain', 'link']
+        'allowed': ['tweet', 'sms', 'plain', 'web_link']
     },
     'session': {'type':'string'},
     'local': {'type':'boolean'},
