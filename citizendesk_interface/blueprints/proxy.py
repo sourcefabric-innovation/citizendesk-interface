@@ -11,7 +11,7 @@ from raven import Client
 from flask_cors import cross_origin
 
 client    = Client('http://b1901abf077d476ba253bce45dd5bf91:cf99fe3dade94a599e9a79aada3f6266@sentry.sourcefabric.org/8')
-core      = 'http://localhost:9060'
+core      = 'http://localhost'
 blueprint = Blueprint('proxy', __name__)
 
 def post_core(url, data={}):
