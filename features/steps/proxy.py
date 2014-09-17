@@ -3,7 +3,7 @@ import json
 
 import citizendesk_interface.blueprints.proxy as proxy
 
-core = 'http://localhost:9060'
+core = 'http://localhost'
 
 response = Mock(
     raise_for_status=lambda :None,
