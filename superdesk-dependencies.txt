@@ -1,5 +1,3 @@
-https://github.com/nicolaiarocci/eve/archive/23f93d1295b8f6c8f7581d9623761637333442fe.zip
-Flask-Mail==0.9.0
-celery[redis]==3.1.13
-bcrypt==1.0.2
-blinker
+git+git://github.com/superdesk/eve.git@develop#egg=Eve==0.5-dev
+git+git://github.com/petrjasek/eve-elastic.git@master#egg=Eve-Elastic==0.1.13
+git+git://github.com/petrjasek/superdesk-server.git@master#egg=Superdesk-Server==0.1.3-dev

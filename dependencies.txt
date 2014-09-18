@@ -1,4 +1,3 @@
-https://github.com/superdesk/superdesk-server/archive/v0.1.3.zip#egg=Superdesk-Server==0.1.3
 behave
 requests
 raven
