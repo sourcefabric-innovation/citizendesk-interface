@@ -77,31 +77,19 @@ schema = {
             'outgested': {
                 'type': 'list',
                 'schema': {
-                    'type': 'objectid',
-                    'data_relation': {
-                        'resource': 'coverages',
-                        'field': '_id'
-                    }
+                    'type': 'string',
                 }
             },
             'targeting': {
                 'type': 'list',
                 'schema': {
-                    'type': 'objectid',
-                    'data_relation': {
-                        'resource': 'coverages',
-                        'field': '_id'
-                    }
+                    'type': 'string',
                 }
             },
             'published': {
                 'type': 'list',
                 'schema': {
-                    'type': 'objectid',
-                    'data_relation': {
-                        'resource': 'coverages',
-                        'field': '_id'
-                    }
+                    'type': 'string',
                 }
             }
         }
