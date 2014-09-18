@@ -94,6 +94,14 @@ schema = {
             }
         }
     },
+    'media': {
+        'type': 'list',
+        'schema': {
+            'link': {
+                'type': 'string'
+            }
+        }
+    }
 }
 entity = {
     'schema': schema,
