@@ -1,12 +1,16 @@
 [![Build Status](https://travis-ci.org/sourcefabric-innovation/citizendesk-interface.png?branch=master)](https://travis-ci.org/sourcefabric-innovation/citizendesk-interface)
 
-## Citizendesk interface
+## Citizen Desk Interface
 
-Interface part of the Citizen Desk 2.0
+Connection between the Citizen Desk [core][core] and the front ends.
 
-#### The role of this repository within the Citizendesk architecture
+#### The role of this component within Citizen Desk
 
-*Interface* stands for Application Programming Interface, that is API. The role of the code here is to expose the resources produced by the server-side, core Citizendesk components. Once exposed to an API, they can be used by a web or mobile frontend, see for example the web [Citizendesk frontend](https://github.com/sourcefabric-innovation/citizendesk-frontend)
+*Interface* stands for Application Programming Interface, that is
+API. The role of this component is to expose the entities in the
+database, and the [core][core] functionalities, through an
+authenticated API. Once exposed, they can be used by a web or mobile
+frontend, see for example the web [Citizen Desk frontend][frontend].
 
 ### Technical notes
 
@@ -27,3 +31,5 @@ a fix to a problem with documents embedding in lists
 
 
 [superdesk_server]: https://github.com/superdesk/superdesk-server
+[core]: https://github.com/sourcefabric-innovation/citizendesk-core
+[frontend]: https://github.com/sourcefabric-innovation/citizendesk-frontend
