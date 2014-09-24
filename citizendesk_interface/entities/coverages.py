@@ -10,8 +10,7 @@ entity = {
         'description': {'type': 'string'},
         'active': {'type': 'boolean'},
         'uuid': {
-            'type': 'string',
-            'required': True
+            'type': 'string'
         }
     },
     'resource_methods': ['GET', 'POST'],

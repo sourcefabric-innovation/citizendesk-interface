@@ -101,6 +101,12 @@ schema = {
                 'type': 'string'
             }
         }
+    },
+    'notices_outer': {
+        'type': 'list',
+        'schema': {
+            'type': 'string'
+        }
     }
 }
 entity = {
