@@ -5,6 +5,23 @@ Feature: handling reports
       then the request is successful
        and the report gets a report id
 
+  Scenario: get a posted report
+      when we insert a report
+       and we get the inserted report
+      then the request is successful
+
+  Scenario: modify a created report
+      when we insert a report
+       and we modify the inserted report
+      then the request is successful
+
+  Scenario: modify a created report
+      when we insert a report
+       and we modify the inserted report
+       and we get the inserted report
+      then the request is successful
+       and the report entity tag is updated upon change
+
   Scenario: get reports
      given no reports
       when we ask reports

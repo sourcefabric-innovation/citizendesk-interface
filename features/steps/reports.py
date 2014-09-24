@@ -70,6 +70,33 @@ def fun(context):
         'local': True,
         'proto': False,
       })
+    context.posted = context.response[0]
+
+@when('we modify the inserted report')
+def fun(context):
+    context.response = context.base.patch(
+        '/reports/{}'.format(context.posted['_id']),
+        data={'notices_outer': ['just a comment']},
+        headers=[('If-Match', context.posted['_etag'])]
+    )
+    context.patched = context.response[0]
+
+@when('we get the inserted report')
+def fun(context):
+    context.response = context.base.get(
+        'reports',
+        item=context.posted['_id']
+    )
+    context.gotten = context.response[0]
+
+@then('the report entity tag is updated upon change')
+def fun(context):
+    patched_etag = context.patched['_etag']
+    gotten_etag  = context.gotten['_etag']
+    assert patched_etag == gotten_etag, 'patch tag: {}, get tag: {}'.format(
+        patched_etag,
+        gotten_etag
+    )
 
 @then('the report gets a report id')
 def fun(context):
