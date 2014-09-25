@@ -40,7 +40,7 @@ entity = {
             },
         },
     },
-    'resource_methods': ['GET'],
+    'resource_methods': ['GET', 'POST'],
     'item_methods': ['GET', 'PATCH'],
     'pagination': False,
 }
