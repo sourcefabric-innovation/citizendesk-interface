@@ -59,7 +59,6 @@ def fun(context):
             'type': 'frontend'
         }],
         'produced': '2014-08-01T13:53:44.040Z',
-        'user_id': '53db9be89c6167205b8f44fb',
         'authors': [{
             'authority': 'citizen_desk',
             'identifiers': ''
