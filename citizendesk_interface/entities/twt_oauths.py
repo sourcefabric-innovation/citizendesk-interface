@@ -14,7 +14,7 @@ entity = {
         'user_id': { 'type':'objectid' }
     },
     'resource_methods': ['GET', 'POST'],
-    'item_methods': ['GET', 'DELETE'],
+    'item_methods': ['GET', 'DELETE', 'PATCH'],
     'pagination': False,
 }
 
