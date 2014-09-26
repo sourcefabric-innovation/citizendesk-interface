@@ -12,6 +12,7 @@ from .entities.core_config     import entity as core_config
 from .entities.citizen_lists   import entity as citizen_lists
 from .entities.citizen_aliases import entity as citizen_aliases
 from .entities.report_statuses import entity as report_statuses
+from .entities.identity_records import entity as identity_records
 
 settings = {
     'SERVER_NAME': 'http://cd2.sourcefabric.net/citizendesk-interface',
@@ -48,6 +49,7 @@ settings = {
         'core_config': core_config,
         'citizen_lists': citizen_lists,
         'citizen_aliases': citizen_aliases,
-        'report_statuses': report_statuses
+        'report_statuses': report_statuses,
+        'identity_records': identity_records,
     }
 }

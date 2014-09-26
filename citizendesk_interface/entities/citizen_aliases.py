@@ -39,6 +39,14 @@ entity = {
                 },
             },
         },
+        'identity_record_id': {
+            'type': 'objectid',
+            'data_relation': {
+                'resource': 'identity_records',
+                'field': '_id',
+                'embeddable': True
+            }
+        },
     },
     'resource_methods': ['GET', 'POST'],
     'item_methods': ['GET', 'PATCH'],
