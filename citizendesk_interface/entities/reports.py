@@ -1,8 +1,5 @@
 from uuid import uuid1
 
-# references are not embeddable when they may be missing. if their
-# value is null, currently (July 2014), Eve throws an error when
-# trying to embed it
 schema = {
     'authors': {'type': 'list'},
     'channels': {'type': 'list'},
@@ -40,17 +37,21 @@ schema = {
     'session': {'type':'string'},
     'local': {'type':'boolean'},
     # according to Martin, this is where the user id is specified, but
-    # just when `local` is true (citizendesk users). Not embeddable,
-    # see comment on the top of the file
+    # just when `local` is true (citizendesk users)
     'user_id': {
         'type':'objectid',
+        'data_relation': {
+            'resource': 'users',
+            'field': '_id',
+            'embeddable': True
+        }
     },
-    # `on_behalf_id` is not embeddable, see comment on the top of the file
     'on_behalf_id': {
         'type':'objectid',
         'data_relation': {
             'resource': 'users',
             'field': '_id',
+            'embeddable': True
         }
     },
     'status': {
@@ -65,7 +66,6 @@ schema = {
         'data_relation': {
             'resource': 'report_statuses',
             'field': 'key',
-            # careful with embedding, may be null
         }
     },
     'status_updated': {
