@@ -2,7 +2,8 @@
 
 ## Citizen Desk Interface
 
-Connection between the Citizen Desk [core][core] and the front ends.
+This is one of the components in the [Citizen Desk
+project](https://www.sourcefabric.org/en/citizendesk/)
 
 #### The role of this component within Citizen Desk
 
