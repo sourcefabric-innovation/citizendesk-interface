@@ -40,11 +40,14 @@ schema = {
     # just when `local` is true (citizendesk users)
     'user_id': {
         'type':'objectid',
-        'data_relation': {
-            'resource': 'users',
-            'field': '_id',
-            'embeddable': True
-        }
+        # the lines below will lead to errors unless
+        # https://github.com/sourcefabric-innovation/citizendesk-core/issues/73
+        # will be fixed
+        #'data_relation': {
+        #    'resource': 'users',
+        #    'field': '_id',
+        #    'embeddable': True
+        #}
     },
     'on_behalf_id': {
         'type':'objectid',
