@@ -1,5 +1,5 @@
 from flask.ext.script import Manager
-from apps.users import CreateUserCommand
+from apps.auth.db.commands import CreateUserCommand
 
 from citizendesk_interface import app
 
