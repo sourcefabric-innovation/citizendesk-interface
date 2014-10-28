@@ -49,6 +49,6 @@ entity = {
         },
     },
     'resource_methods': ['GET', 'POST'],
-    'item_methods': ['GET', 'PATCH'],
+    'item_methods': ['GET', 'PATCH', 'PUT'],
     'pagination': False,
 }
