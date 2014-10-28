@@ -4,9 +4,6 @@ from .entities.twt_streams  import entity as twt_streams
 from .entities.twt_oauths   import entity as twt_oauths
 from .entities.twt_filters  import entity as twt_filters
 from .entities.steps        import entity as steps
-from .entities.settings_bool import entity as settings_bool
-from .entities.settings_int  import entity as settings_int
-from .entities.settings_string import entity as settings_string
 from .entities.coverages       import entity as coverages
 from .entities.core_config     import entity as core_config
 from .entities.citizen_lists   import entity as citizen_lists
@@ -42,9 +39,6 @@ settings = {
         'twt-searches': twt_searches,
         'twt_streams': twt_streams,
         'steps': steps,
-        'settings-bool': settings_bool,
-        'settings-int': settings_int,
-        'settings-string': settings_string,
         'coverages': coverages,
         'core_config': core_config,
         'citizen_lists': citizen_lists,
