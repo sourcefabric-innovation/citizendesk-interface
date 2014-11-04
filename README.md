@@ -37,11 +37,31 @@ therefore a WSGI application. You can refer to the [deploying section
 in the Flask doc](http://flask.pocoo.org/docs/0.10/deploying/) in
 order to have more info about running and deploying the
 app. Specifically i used Gunicorn in order to serve the app, and you
-may find a few simple scripts i used in this repository root. The app
-will look for a Mongo database on the same machine it is working on,
-on the standard port, and it will look for an instance of [Citizen
-Desk Core][core] at a location which is currently hardcoded. Some
-initialisation scripts are contained in the `initialise` folder.
+may find a few simple scripts i used in this repository root. The
+scripts have the `dot` extension because they can be run using `source
+<script>.dot` or `. <script>.dot`.
+
+The app will look for a Mongo database on the same machine it is
+working on, on the standard port, and it will look for an instance of
+[Citizen Desk Core][core] at a location which is currently
+hardcoded. Some initialisation scripts are contained in the
+`initialise` folder.
+
+##### Running locally
+
+The current setup is tailored to our development server. In order to
+run the application locally, please set the `SERVER_NAME` to a value
+like `localhost:5000` in
+`citizendesk_interface/settings.py`. Generally, the server name there
+should match the value sent by your browser in the `Host` header. In
+order to do troubleshooting, i can advice using `wget` targeted at the
+API root. For example:
+
+    wget --header 'Host: http://cd2.sourcefabric.net/citizendesk-interface' http://localhost:5000/
+
+Should work if you are running the app with the `launch-gunicorn.dot`
+script, but it will not work with your browser because the host will
+be different.
 
 #### Running the tests
 
