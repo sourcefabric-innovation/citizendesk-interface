@@ -1,7 +1,10 @@
-for name in $(cat initialise/user-names.txt)
+passwords=passwords.csv
+rm $passwords
+for name in $(cat user-names.txt)
   do
     password=$RANDOM
-    echo "creating user $name with password $password"
-    python manage.py create-user --username $name --password $password --email none@none
-    echo "$name,$password" >> passwords.csv
+    python ../manage.py create-user --username $name --password $password --email none@none
+    echo "$name,$password" >> $passwords
 done
+echo
+echo "Users created, credentials stored in the file $passwords"    
