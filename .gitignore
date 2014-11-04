@@ -4,3 +4,4 @@
 *.log
 ENV
 .python-version
+initialise/passwords.csv
