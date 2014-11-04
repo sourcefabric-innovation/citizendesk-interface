@@ -8,6 +8,5 @@ manager = Manager(app)
 
 if __name__ == "__main__":
     manager.run({
-        'create-user': CreateUserCommand(),
-        'hash-user-passwords': HashUserPasswordsCommand()
+        'create-user': CreateUserCommand()
     });
