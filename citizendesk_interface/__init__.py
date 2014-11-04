@@ -6,7 +6,9 @@ from eve.render import send_response
 from raven.handlers.logging import SentryHandler
 import superdesk
 import apps.users as superdesk_users
-import apps.auth.db as superdesk_auth
+import apps.auth as superdesk_auth
+import apps.auth.db as superdesk_auth_db
+from superdesk.validator import SuperdeskValidator
 
 try:
     from eve_docs import eve_docs
@@ -32,6 +34,7 @@ def register_blueprints(app):
     citizendesk_coverages_init_app(app)
     superdesk_users.init_app(app)
     superdesk_auth.init_app(app)
+    superdesk_auth_db.init_app(app)
     if has_docs:
         Bootstrap(app) # required by eve docs
         app.register_blueprint(eve_docs, url_prefix='/docs')
@@ -41,7 +44,8 @@ def get_app(customised={}):
     settings.update(customised)
     app = Eve(
         settings=settings,
-        json_encoder=MongoJSONEncoder
+        json_encoder=MongoJSONEncoder,
+        validator=SuperdeskValidator,
     )
     register_blueprints(app)
     app.logger.addHandler(handler)
