@@ -1,3 +1,4 @@
+pyelasticsearch==0.7.1
 git+git://github.com/superdesk/eve.git@develop#egg=Eve==0.5-dev
 git+git://github.com/petrjasek/eve-elastic.git@master#egg=Eve-Elastic==0.1.13
 Superdesk-Server==0.1.6
